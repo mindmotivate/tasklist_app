@@ -30,7 +30,7 @@ jobs:
         # -o bandit-report.json: Write output to file
 
       - name: Upload Bandit Report
-        uses: actions/upload-artifact@v3  # Upload report as artifact
+        uses: actions/upload-artifact@v4  # Upload report as artifact
         if: always()  # Upload even if previous steps fail
         with:
           name: bandit-findings
@@ -43,7 +43,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3  # Get code from repository
-
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
       - name: Build Docker Image
         run: docker build -f Dockerfile -t motivatedmind336/malgus_docker:latest .
 
