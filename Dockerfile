@@ -6,8 +6,7 @@ WORKDIR /app
 COPY app/requirements.txt .
 
 RUN python -m venv .venv \
-    && . .venv/bin/activate \
-    && pip install --no-cache-dir -r requirements.txt
+    && .venv/bin/pip install --no-cache-dir -r requirements.txt
 
 # Stage 2
 FROM cgr.dev/chainguard/python:latest
