@@ -59,4 +59,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_PASSWORD }}  # Replace with your password
 
       - name: Push Image to Docker Hub (optional)
-        run: docker push motivatedmind336/sith_tasklist_app:latest  # Push image (requires login)
+        run: docker push motivatedmind336/sith_tasklist_app:latest  # Push image to Docker Hub
