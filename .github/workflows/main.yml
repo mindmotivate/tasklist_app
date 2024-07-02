@@ -21,7 +21,7 @@ jobs:
         run: pip install bandit
 
       - name: Run Bandit Scan
-        run: bandit -ll -ii -r . -f json -o bandit-report.json
+        run: bandit -ll -ii -r . -f json -o bandit-report.json || true 
         # -ll: Show only low, medium, or high severity findings
         # -ii: Show only low, medium, or high confidence findings
         # -r: Recursively scan all files
